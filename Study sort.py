@@ -11,6 +11,18 @@ Typelist = ["Lec", "Lab", "Ex"]
 #Exception names have to be coded seperately
 exceptions = ["basics"]
 
+def addsubj():
+    sub = input("Subject code?: ")
+    Subjectlist.append(sub)
+    return
+while True:    
+    add = input("Any additional subject codes? (y/n): ")
+    match add:
+        case "y":
+           addsubj()
+        case "n":
+            break
+
 #Finds file in given directory
 def find_file(filename, search_path):
     for root, dirs, files in os.walk(search_path):
@@ -51,6 +63,6 @@ while True:
                 match e:
                     case "basics":
                         if "crdownload" not in filename:
-                            move_file(filename, search_directory, e)
+                            move_file(filename, search_directory, "DSP")
                     
 
