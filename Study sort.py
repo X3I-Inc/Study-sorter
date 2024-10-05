@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 
 #Alternating current grids, Operating systems, Digital Signal Processing, Electronic Design, Philosophy, Sensors and Actuaators
-Subjectlist = ["AC", "OS", "DE", "DSP", "ED", "PH", "SAA"] 
+Subjectlist = ["AC", "OS", "DE", "DSP", "ED", "PH", "SA"] 
 
 #List of types Lecture, Lab, Exercise
 Typelist = ["Lec", "Lab", "Ex"]
