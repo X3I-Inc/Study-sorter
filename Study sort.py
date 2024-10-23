@@ -9,11 +9,12 @@ Subjectlist = ["AC", "OS", "DE", "DSP", "ED", "PH", "SA"]
 Typelist = ["Lec", "Lab", "Ex"]
 
 #Exception names have to be coded seperately
-exceptions = ["basics"]
+exceptions = ["basics", "S&A"]
 
 def addsubj():
     sub = input("Subject code?: ")
     Subjectlist.append(sub)
+    print("added: " + sub)
     return
 while True:    
     add = input("Any additional subject codes? (y/n): ")
@@ -50,11 +51,11 @@ def move_file(filename, search_directory, s):
 
 #directory of download by default
 search_directory = r"C:\Users\emilh\Downloads"
-
+default_dir = r"C:\Users\emilh\OneDrive\Desktop\Year 3\Unknown"
 while True:
     for filename in os.listdir(search_directory):
         for s in Subjectlist:
-            if s in filename:
+            if s in filename[0: 5]:
                 if "crdownload" not in filename:
                     move_file(filename, search_directory, s)
             
@@ -64,5 +65,9 @@ while True:
                     case "basics":
                         if "crdownload" not in filename:
                             move_file(filename, search_directory, "DSP")
+                    case "S&A":
+                        if "crdownload" not in filename:
+                            move_file(filename, search_directory, "SA")
+                    
                     
 
